@@ -6,12 +6,12 @@
 #    By: tgrangeo <tgrangeo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/23 18:40:57 by thomasgrang       #+#    #+#              #
-#    Updated: 2020/02/24 15:56:55 by tgrangeo         ###   ########.fr        #
+#    Updated: 2020/02/28 10:52:05 by tgrangeo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS = ft_close.c main.c 
+SRCS = ft_close.c ft_image.c parse_config.c ft_init.c
 
 NAME = cube3d.a
 HEADER = includes/cube3d.h
@@ -23,8 +23,7 @@ RM = rm -f
 OBJS = ${SRCS:.c=.o}
 
 all: $(MINILIBX) $(LIBFT) $(NAME)
-	gcc $(FRAMEWORKS) $(FLAGS) main.c $(NAME)
-
+	gcc $(FRAMEWORKS) $(FLAGS) main.c $(NAME) $(LIBFT)
 
 %.o: %.c $(LIBFT) $(MINILIBX) $(HEADER)
 	gcc $(FLAGS) -c $< -o $@
