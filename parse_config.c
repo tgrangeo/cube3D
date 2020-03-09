@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 11:21:40 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/02/25 12:34:28 by tgrangeo         ###   ########.fr       */
+/*   Updated: 2020/03/03 15:51:41 by tgrangeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	ft_parse_config(t_params *param)
 		{
 			param->size_y = ft_atoi(str + 1);
 			param->size_x = ft_atoi(str + 10);
-			dprintf(1, "x : %d\n", param->size_x);
-			dprintf(1, "y : %d\n", param->size_y);
 		}
 		free(str);
 	}

@@ -6,12 +6,12 @@
 #    By: tgrangeo <tgrangeo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/23 18:40:57 by thomasgrang       #+#    #+#              #
-#    Updated: 2020/02/28 10:52:05 by tgrangeo         ###   ########.fr        #
+#    Updated: 2020/03/09 17:24:28 by tgrangeo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS = ft_close.c ft_image.c parse_config.c ft_init.c
+SRCS = ft_close.c ft_image.c parse_config.c ft_init.c raycasting.c move.c
 
 NAME = cube3d.a
 HEADER = includes/cube3d.h
