@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   libft.h                                          .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/11 12:18:25 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/17 18:02:07 by tgrangeo    ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgrangeo <tgrangeo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/11 12:18:25 by tgrangeo          #+#    #+#             */
+/*   Updated: 2020/03/12 19:41:29 by tgrangeo         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -79,5 +79,6 @@ char				*ft_strndup(const char *s, int len);
 char				*ft_strjoin_free_s1(char *s1, char const *s2);
 int					get_next_line(int fd, char **line);
 int					ft_strchr_int(char *s, int c);
+int					ft_count_int(int n);
 
 #endif

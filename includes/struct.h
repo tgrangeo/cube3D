@@ -6,7 +6,7 @@
 /*   By: tgrangeo <tgrangeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 14:17:31 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/03/09 17:35:49 by tgrangeo         ###   ########.fr       */
+/*   Updated: 2020/03/12 18:23:27 by tgrangeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,16 @@ typedef	struct s_key
 	
 }				t_key;
 
+typedef struct	s_parse
+{
+	char	**map;
+	char	*tex_no;
+	char	*tex_so;
+	char	*tex_we;
+	char	*tex_ea;
+}				t_parse;
+
+
 
 typedef struct s_params 
 {
@@ -62,6 +72,7 @@ typedef struct s_params
 	t_vector_d	deltadist;
 	t_vector_i	step;
 	t_key		key;
+	t_parse		parse;
 	void		*win_ptr;
 	void		*mlx_ptr;
 	void		*img_ptr;
@@ -74,6 +85,8 @@ typedef struct s_params
 	int			color;
 	double		ms;
 	double		rotspeed;
+	int 		perm_x;
+	int 		perm_y;
 }				t_params;
 
 #endif

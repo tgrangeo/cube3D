@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init.c                                          :+:      :+:    :+:   */
+/*   ft_count.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tgrangeo <tgrangeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/28 10:52:08 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/03/12 14:58:47 by tgrangeo         ###   ########.fr       */
+/*   Created: 2020/03/12 19:34:42 by tgrangeo          #+#    #+#             */
+/*   Updated: 2020/03/12 19:43:18 by tgrangeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/cube3d.h"
+#include "libft.h"
 
-t_params	ft_init_struct(void)
+int		ft_count_int(int n)
 {
-	t_params	param;
+	int i;
 
-	param.size_y = 1080;
-	param.size_x = 1920;
-	param.pos.x = 2.5;
-	param.pos.y = 2.5;
-	param.dir.x = 1;
-	param.dir.y = 0;
-	param.plane.x = 0;
-	param.plane.y = 0.66;
-	param.color = 0x34eb40;
-	param.ms = 0.10;
-	param.rotspeed = 0.06;
-	return (param);
+	i = 0;
+	while (n >= 10)
+	{
+		n /= 10;
+		i++;
+	}
+	if (n > 0)
+		i++;
+	return (i);
 }

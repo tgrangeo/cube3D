@@ -6,34 +6,34 @@
 /*   By: tgrangeo <tgrangeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 17:18:56 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/03/09 17:42:09 by tgrangeo         ###   ########.fr       */
+/*   Updated: 2020/03/12 15:07:21 by tgrangeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/cube3d.h"
 
-void	move_front(t_params *param)
+void	move_front(t_params *param, t_vector_d *fpos)
 {
-	param->pos.x += param->dir.x * param->ms;
-	param->pos.y += param->dir.y * param->ms;
+	fpos->x = param->dir.x * param->ms;
+	fpos->y = param->dir.y * param->ms;
 }
 
-void	move_back(t_params *param)
+void	move_back(t_params *param, t_vector_d *fpos)
 {
-	param->pos.x -= param->dir.x * param->ms;
-	param->pos.y -= param->dir.y * param->ms;
+	fpos->x -= param->dir.x * param->ms;
+	fpos->y -= param->dir.y * param->ms;
 }
 
-void	move_right(t_params *param)
+void	move_right(t_params *param, t_vector_d *fpos)
 {
-	param->pos.x += param->plane.x * param->ms;
-	param->pos.y += param->plane.y * param->ms;
+	fpos->x += param->plane.x * param->ms;
+	fpos->y += param->plane.y * param->ms;
 }
 
-void	move_left(t_params *param)
+void	move_left(t_params *param, t_vector_d *fpos)
 {
-	param->pos.x -= param->plane.x * param->ms;
-	param->pos.y -= param->plane.y * param->ms;
+	fpos->x -= param->plane.x * param->ms;
+	fpos->y -= param->plane.y * param->ms;
 }
 
 void	move_cam_right(t_params *param)
