@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgrangeo <tgrangeo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 14:17:31 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/03/12 18:23:27 by tgrangeo         ###   ########.fr       */
+/*   Updated: 2020/09/30 11:08:59 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,21 @@ typedef struct	s_img
 	int			bpp;
 	int 		size_line;
 	int			endian;
+	void		*ptr;
+	int			width;
+	int			height;
 	
 }				t_img;
+
+typedef struct	s_texture
+{
+	t_img	no;
+	t_img	so;
+	t_img	ea;
+	t_img	we;
+	double	tex_x;
+	double	tex_y;
+}			t_texture;
 
 typedef	struct s_key
 {
@@ -49,9 +62,16 @@ typedef	struct s_key
 	
 }				t_key;
 
+typedef struct	s_rgb
+{
+	int	r;
+	int	g;
+	int	b;
+}				t_rgb;
+
 typedef struct	s_parse
 {
-	char	**map;
+	int		i;
 	char	*tex_no;
 	char	*tex_so;
 	char	*tex_we;
@@ -71,8 +91,11 @@ typedef struct s_params
 	t_vector_d	sidedist;
 	t_vector_d	deltadist;
 	t_vector_i	step;
+	t_vector_d	hhiitt;
 	t_key		key;
 	t_parse		parse;
+	t_texture	tex;
+	t_vector_i	spr;
 	void		*win_ptr;
 	void		*mlx_ptr;
 	void		*img_ptr;
@@ -82,11 +105,23 @@ typedef struct s_params
 	int			hit;
     int			side;
 	double		walldist;
-	int			color;
+	int			color_sky;
+	int			color_floor;
 	double		ms;
 	double		rotspeed;
 	int 		perm_x;
 	int 		perm_y;
+	char		*sprite;
+	int			first_line;
+	int			y_map;
+	int			x_map;
+	int			**worldmap;
+	int 		textNum;
+	double		wallx;
+	int			texX;
+	int			texWidth;
+	int			texHeight;
+	t_img		s;
 }				t_params;
 
 #endif

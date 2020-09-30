@@ -1,15 +1,15 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tgrangeo <tgrangeo@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 12:18:25 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/03/12 19:41:29 by tgrangeo         ###   ########.fr       */
-/*                                                                            */
+/*                                                          LE - /            */
+/*                                                              /             */
+/*   libft.h                                          .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2019/10/11 12:18:25 by tgrangeo     #+#   ##    ##    #+#       */
+/*   Updated: 2020/03/25 14:22:33 by thomasgrang ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
 /* ************************************************************************** */
-
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -76,9 +76,12 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 											void (*del)(void *));
 char				*ft_substr_free(char *s, int start, int len);
 char				*ft_strndup(const char *s, int len);
-char				*ft_strjoin_free_s1(char *s1, char const *s2);
+char				*ft_strjoin_free(char *s1, char *s2);
 int					get_next_line(int fd, char **line);
 int					ft_strchr_int(char *s, int c);
 int					ft_count_int(int n);
+char				*ft_itoa_base(unsigned long n, char *base);
+char				*ft_long_itoa_base(unsigned long n, char *base);
+char				*ft_strjoin_free_s1(char *s1, char const *s2);
 
 #endif

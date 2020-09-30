@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgrangeo <tgrangeo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 10:18:11 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/03/12 11:44:50 by tgrangeo         ###   ########.fr       */
+/*   Updated: 2020/09/08 15:42:40 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,16 @@
          		param->map.y += param->step.y;
          		param->side = 1;
 			}
-			if(worldmap[param->map.x][param->map.y] > 0)
+			if(param->worldmap[param->map.x][param->map.y] >= 1)
 				param->hit = 1;
 		}
 		if (param->side == 0)
 			param->walldist = (param->map.x - param->pos.x + (1 - param->step.x) / 2) / param->raydir.x;
       	else
 			param->walldist = (param->map.y - param->pos.y + (1 - param->step.y) / 2) / param->raydir.y;
+		
+		param->hhiitt.x = param->pos.x + param->raydir.x * param->walldist;
+		param->hhiitt.y = param->pos.y + param->raydir.y * param->walldist;
 		
 		//dprintf(1, "size_x: %d\n\n", param->size_x);
 		//dprintf(1, "side: %d\n\n", param->side);
@@ -88,6 +91,6 @@
 		//dprintf(1, "14: %f\n", (param->map.x - param->pos.x + (1 - param->step.x) / 2) / param->raydir.x);
 		//dprintf(1, "15: %f\n\n", (param->map.y - param->pos.y + (1 - param->step.y) / 2) / param->raydir.y);
 		//dprintf(1, "walldist: %f\n", param->walldist);
-	
+		
 		return (param->walldist);
 	}

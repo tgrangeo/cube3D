@@ -21,9 +21,9 @@ int		ft_key_press(int key, t_params *param)
 	if (key == KEY_W)
 		param->key.w = 1;
 	if (key == KEY_LEFT)
-		param->key.af = 1;
-	if (key == KEY_RIGHT)
 		param->key.ar = 1;
+	if (key == KEY_RIGHT)
+		param->key.af = 1;
 	return (1);
 }
 
@@ -38,8 +38,8 @@ int		ft_key_release(int key, t_params *param)
 	if (key == KEY_W)
 		param->key.w = 0;
 	if (key == KEY_LEFT)
-		param->key.af = 0;
-	if (key == KEY_RIGHT)
 		param->key.ar = 0;
+	if (key == KEY_RIGHT)
+		param->key.af = 0;
 	return (1);
 }

@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_strjoin.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/14 16:42:24 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/17 18:00:18 by tgrangeo    ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/03/25 14:22:22 by thomasgrang ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -40,6 +40,36 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	new[i] = '\0';
 	return (new);
+}
+
+char			*ft_strjoin_free(char *s1, char *s2)
+{
+	char		*str;
+	int			i;
+	int			j;
+
+	if (s1 && s2)
+	{
+		if (!(str = (char *)malloc(sizeof(char)
+		* (ft_strlen(s1)) + (ft_strlen(s2) + 1))))
+			return (NULL);
+		i = 0;
+		j = 0;
+		while (s1[i])
+		{
+			str[j++] = s1[i++];
+		}
+		i = 0;
+		while (s2[i])
+		{
+			str[j++] = s2[i++];
+		}
+		str[j] = '\0';
+		free(s1);
+		free(s2);
+		return (str);
+	}
+	return (0);
 }
 
 char			*ft_strjoin_free_s1(char *s1, char const *s2)
