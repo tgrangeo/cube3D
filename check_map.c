@@ -6,7 +6,7 @@
 /*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 11:40:57 by thomasgrang       #+#    #+#             */
-/*   Updated: 2020/06/30 10:25:26 by thomasgrang      ###   ########lyon.fr   */
+/*   Updated: 2020/10/01 10:50:15 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,5 @@ int		ft_check_map(t_params *param)
 		x = 0;
 		y++;
 	}
-	dprintf(1, "map bonne sa mere\n");
 	return(1);
 }

@@ -6,7 +6,7 @@
 /*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 10:18:11 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/09/08 15:42:40 by thomasgrang      ###   ########lyon.fr   */
+/*   Updated: 2020/10/01 10:03:59 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@
          		param->map.y += param->step.y;
          		param->side = 1;
 			}
-			if(param->worldmap[param->map.x][param->map.y] >= 1)
+			if(param->worldmap[param->map.x][param->map.y] == 1)
 				param->hit = 1;
 		}
 		if (param->side == 0)
@@ -72,25 +72,6 @@
 		
 		param->hhiitt.x = param->pos.x + param->raydir.x * param->walldist;
 		param->hhiitt.y = param->pos.y + param->raydir.y * param->walldist;
-		
-		//dprintf(1, "size_x: %d\n\n", param->size_x);
-		//dprintf(1, "side: %d\n\n", param->side);
-		//dprintf(1, "cameraX: %f\n\n", param->cameraX);
-		//dprintf(1, "raydir.x: %f\n", param->raydir.x);
-		//dprintf(1, "raydir.y: %f\n\n", param->raydir.y);
-		//dprintf(1, "map.x: %d\n", param->map.x);
-		//dprintf(1, "map.y: %d\n\n", param->map.y);
-		//dprintf(1, "pos.x: %f\n", param->pos.x);
-		//dprintf(1, "pos.y: %f\n\n", param->pos.y);
-		//dprintf(1, "step.x: %d\n", param->step.x);
-		//dprintf(1, "step.y: %d\n\n", param->step.y);
-		//dprintf(1, "deltadist.x: %f\n", param->deltadist.x);
-		//dprintf(1, "deltadist.y: %f\n\n", param->deltadist.y);
-		//dprintf(1, "sidedist.x: %f\n", param->sidedist.x);
-		//dprintf(1, "sidedist.y: %f\n\n", param->sidedist.y);
-		//dprintf(1, "14: %f\n", (param->map.x - param->pos.x + (1 - param->step.x) / 2) / param->raydir.x);
-		//dprintf(1, "15: %f\n\n", (param->map.y - param->pos.y + (1 - param->step.y) / 2) / param->raydir.y);
-		//dprintf(1, "walldist: %f\n", param->walldist);
 		
 		return (param->walldist);
 	}

@@ -6,7 +6,7 @@
 /*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 20:44:51 by thomasgrang       #+#    #+#             */
-/*   Updated: 2020/09/30 11:23:27 by thomasgrang      ###   ########lyon.fr   */
+/*   Updated: 2020/10/01 12:17:22 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,14 @@ static void define_pos(t_params *param, char dir, int x, int y)
 {
 	if (dir == 'N' || dir == 'S')
 	{
-		param->pos.x = y;
-		param->pos.y = x + 2;
+		param->pos.x = y + 0.5;
+		param->pos.y = x + 1.5;
 		ft_init_map_two(param, (int)dir);
 	}
 	if (dir == 'E' || dir == 'W')
 	{
-		param->pos.x = y;
-		param->pos.y = x + 2;
+		param->pos.x = y - 0.5;
+		param->pos.y = x + 1.5;
 		ft_init_map(param, (int)dir);
 	}
 }
@@ -127,27 +127,27 @@ static void ft_first_last(int *map, int x_map)
 	}
 }
 
-static void afficherTableau(int **grille, int x, int y)
-{
-    int i;
-    int j;
-
-	i = 0;
-	j = 0;
-
-	while (i <= y)
-	{
-		dprintf(1, "%d-",i);
-		while (j <= x)
-		{
-			dprintf(1, "%d", grille[i][j]);
-			j++;
-		}
-		dprintf(1,"\n");
-		j = 0;
-		i++;
-	}
-}
+//static void afficherTableau(int **grille, int x, int y)
+//{
+//    int i;
+//    int j;
+//
+//	i = 0;
+//	j = 0;
+//
+//	while (i <= y)
+//	{
+//		dprintf(1, "%d-",i);
+//		while (j <= x)
+//		{
+//			dprintf(1, "%d", grille[i][j]);
+//			j++;
+//		}
+//		dprintf(1,"\n");
+//		j = 0;
+//		i++;
+//	}
+//}
 
 void ft_map_tab(t_params *param)
 {
@@ -184,5 +184,5 @@ void ft_map_tab(t_params *param)
 		free(buffer);
 	close(fd);
 	param->worldmap = temp_map;
-	afficherTableau(temp_map, param->x_map, param->y_map);
+	//afficherTableau(temp_map, param->x_map, param->y_map);
 }

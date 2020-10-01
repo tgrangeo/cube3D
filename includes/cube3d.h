@@ -6,7 +6,7 @@
 /*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 11:11:22 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/09/30 11:23:36 by thomasgrang      ###   ########lyon.fr   */
+/*   Updated: 2020/09/30 11:33:52 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ char		ft_wall_face(t_params *param);
 t_img		good_tex(t_params *param);
 void		tex_to_img(t_params *param, int i, t_img texture);
 void		ft_init_sprite(t_params *param, int x, int y);
+void		raycast_sprite(t_params *p);
+void		raycast_sprite_init(t_sprite *s, t_params *p);
 
 
 #endif

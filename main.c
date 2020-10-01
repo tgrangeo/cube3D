@@ -8,6 +8,8 @@ int main(void)
 	ft_parse_config(&param);
 	param.mlx_ptr = mlx_init();
 	init_tex(&param);
+	if (!(param.zbuffer = (int*)malloc((sizeof(int)) * param.size_x)))
+		return (0);
 	param.win_ptr = mlx_new_window(param.mlx_ptr, param.size_x, param.size_y, "cube3d");
 	param.img.img = mlx_new_image(param.mlx_ptr, param.size_x, param.size_y);
 	param.img.data = (int *)mlx_get_data_addr(param.img.img, &param.img.bpp, &param.img.size_line, &param.img.endian);
@@ -16,5 +18,6 @@ int main(void)
 	mlx_hook(param.win_ptr, 3, 0, ft_key_release, &param);
 	mlx_hook(param.win_ptr, 17, 0, ft_close, &param);
   	mlx_loop(param.mlx_ptr);
-  return (0);
+	free(param.zbuffer);
+  	return (0);
 }

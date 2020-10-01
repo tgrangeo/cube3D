@@ -11,22 +11,24 @@ static int new_image(t_params *param)
 	while (x < param->size_x)
 	{
 		dist = ft_raycasting(x, param);
+		param->zbuffer[x] = (int)dist;
 		wallheight = (int)(param->size_y / dist);
 		ft_vertical_line(x, wallheight, param);
 		x++;
 	}
+	raycast_sprite(param);
 	mlx_put_image_to_window(param->mlx_ptr, param->win_ptr, param->img.img, 0, 0);
 	return (1);
 }
 
 void	ft_col(t_params *param, t_vector_d *fpos)
 {
-	if (param->worldmap[(int)(fpos->x + param->pos.x)][(int)param->pos.y] >= 1)
+	if (param->worldmap[(int)(fpos->x + param->pos.x)][(int)param->pos.y] == 1)
 		param->perm_x = 0;
 	else
 		param->perm_x = 1;
 	
-	if (param->worldmap[(int)param->pos.x][(int)(fpos->y + param->pos.y)] >= 1)
+	if (param->worldmap[(int)param->pos.x][(int)(fpos->y + param->pos.y)] == 1)
 		param->perm_y = 0;
 	else
 		param->perm_y = 1;

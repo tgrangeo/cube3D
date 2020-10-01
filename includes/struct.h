@@ -6,7 +6,7 @@
 /*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 14:17:31 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/09/30 11:08:59 by thomasgrang      ###   ########lyon.fr   */
+/*   Updated: 2020/10/01 10:33:50 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,27 @@ typedef struct	s_parse
 	char	*tex_ea;
 }				t_parse;
 
-
+typedef struct	s_sprite
+{
+	int		color;
+	int		texy;
+	int		texx;
+	int		d;
+	double	spritex;
+	double	spritey;
+	double	invdet;
+	double	transformx;
+	double	transformy;
+	int		spritescreenx;
+	int		spritewidth;
+	int		spriteheight;
+	int		drawstarty;
+	int		drawstartx;
+	int		drawendx;
+	int		drawendy;
+	int		y;
+	int		stripe;
+}				t_sprite;
 
 typedef struct s_params 
 {
@@ -95,7 +115,6 @@ typedef struct s_params
 	t_key		key;
 	t_parse		parse;
 	t_texture	tex;
-	t_vector_i	spr;
 	void		*win_ptr;
 	void		*mlx_ptr;
 	void		*img_ptr;
@@ -121,7 +140,10 @@ typedef struct s_params
 	int			texX;
 	int			texWidth;
 	int			texHeight;
+	int			*zbuffer;
 	t_img		s;
+	t_sprite	ss;
+	t_vector_d	sss;
 }				t_params;
 
 #endif
