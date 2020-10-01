@@ -1,14 +1,13 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   ft_strjoin.c                                     .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/14 16:42:24 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/03/25 14:22:22 by thomasgrang ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/10/01 13:20:02 by thomasgrang       #+#    #+#             */
+/*   Updated: 2020/10/01 13:40:54 by tgrangeo         ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -42,7 +41,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (new);
 }
 
-char			*ft_strjoin_free(char *s1, char *s2)
+char	*ft_strjoin_free(char *s1, char *s2)
 {
 	char		*str;
 	int			i;
@@ -56,14 +55,10 @@ char			*ft_strjoin_free(char *s1, char *s2)
 		i = 0;
 		j = 0;
 		while (s1[i])
-		{
 			str[j++] = s1[i++];
-		}
 		i = 0;
 		while (s2[i])
-		{
 			str[j++] = s2[i++];
-		}
 		str[j] = '\0';
 		free(s1);
 		free(s2);
@@ -72,7 +67,7 @@ char			*ft_strjoin_free(char *s1, char *s2)
 	return (0);
 }
 
-char			*ft_strjoin_free_s1(char *s1, char const *s2)
+char	*ft_strjoin_free_s1(char *s1, char const *s2)
 {
 	char		*str;
 	int			i;

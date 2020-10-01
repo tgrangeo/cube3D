@@ -1,14 +1,13 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   ft_strdup.c                                      .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: tgrangeo <tgrangeo@student.le-101.fr>      +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/11 12:40:23 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/02/17 17:12:38 by tgrangeo    ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/11 12:40:23 by tgrangeo          #+#    #+#             */
+/*   Updated: 2020/10/01 13:37:48 by tgrangeo         ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -31,7 +30,7 @@ char	*ft_strdup(const char *src)
 	return (dest);
 }
 
-char			*ft_strndup(const char *s, int len)
+char	*ft_strndup(const char *s, int len)
 {
 	int			i;
 	char		*dup;

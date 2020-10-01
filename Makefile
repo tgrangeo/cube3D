@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+         #
+#    By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/23 18:40:57 by thomasgrang       #+#    #+#              #
-#    Updated: 2020/09/08 16:31:41 by thomasgrang      ###   ########lyon.fr    #
+#    Updated: 2020/10/01 14:36:52 by tgrangeo         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS = key.c ft_image.c parse_config.c parse_conf_2.c ft_init.c raycasting.c move.c loop.c check_map.c texture.c sprite.c
+SRCS = srcs/key.c srcs/ft_image.c srcs/parse_config.c srcs/parse_conf_2.c srcs/ft_init.c srcs/raycasting.c srcs/move.c srcs/loop.c srcs/check_map.c srcs/texture.c srcs/sprite.c srcs/parse_conf_3.c
 
 NAME = cube3d.a
 HEADER = includes/cube3d.h
@@ -23,7 +23,7 @@ RM = rm -f
 OBJS = ${SRCS:.c=.o}
 
 all: $(MINILIBX) $(LIBFT) $(NAME)
-	gcc $(FRAMEWORKS) $(FLAGS) main.c $(NAME) $(LIBFT)
+	gcc $(FRAMEWORKS) $(FLAGS) srcs/main.c $(NAME) $(LIBFT)
 
 %.o: %.c $(LIBFT) $(MINILIBX) $(HEADER)
 	gcc $(FLAGS) -c $< -o $@

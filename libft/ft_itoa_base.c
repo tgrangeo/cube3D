@@ -1,14 +1,13 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   ft_itoa_base.c                                   .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: thomasgrangeon <thomasgrangeon@student.    +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/12/06 12:56:27 by tgrangeo     #+#   ##    ##    #+#       */
-/*   Updated: 2020/03/25 13:21:29 by thomasgrang ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/06 12:56:27 by tgrangeo          #+#    #+#             */
+/*   Updated: 2020/10/01 13:41:30 by tgrangeo         ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
@@ -77,7 +76,7 @@ char			*ft_itoa_base(unsigned long n, char *base)
 char			*ft_long_itoa_base(unsigned long n, char *base)
 {
 	char			*str;
-	int			len;
+	int				len;
 	unsigned long	len_base;
 	unsigned long	nb;
 	unsigned long	rest;
