@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/23 18:40:57 by thomasgrang       #+#    #+#              #
-#    Updated: 2020/10/01 14:36:52 by tgrangeo         ###   ########lyon.fr    #
+#    Updated: 2020/11/23 12:54:09 by thomasgrang      ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRCS = srcs/key.c srcs/ft_image.c srcs/parse_config.c srcs/parse_conf_2.c srcs/ft_init.c srcs/raycasting.c srcs/move.c srcs/loop.c srcs/check_map.c srcs/texture.c srcs/sprite.c srcs/parse_conf_3.c
+SRCS = srcs/key.c srcs/ft_image.c srcs/parse_config.c srcs/parse_conf_2.c srcs/ft_init.c srcs/raycasting.c srcs/move.c srcs/loop.c srcs/check_map.c srcs/texture.c srcs/sprite.c srcs/parse_conf_3.c srcs/utils.c srcs/bitmap.c
 
 NAME = cube3d.a
 HEADER = includes/cube3d.h

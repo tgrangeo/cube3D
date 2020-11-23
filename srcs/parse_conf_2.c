@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parse_conf_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 20:44:51 by thomasgrang       #+#    #+#             */
-/*   Updated: 2020/10/01 15:43:16 by tgrangeo         ###   ########lyon.fr   */
+/*   Updated: 2020/11/20 13:51:34 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cube3d.h"
 
-void			ft_size_tab(t_params *param)
+void			ft_size_tab(t_params *param, char *cube)
 {
 	int		fd;
 	char	*buffer;
@@ -25,7 +25,7 @@ void			ft_size_tab(t_params *param)
 	param->y_map = 1;
 	param->x_map = 0;
 	buffer = NULL;
-	fd = open("map.cub", O_RDONLY);
+	fd = open(cube, O_RDONLY);
 	while (get_next_line(fd, &buffer) > 0)
 	{
 		check_line(buffer, param);
@@ -38,6 +38,11 @@ void			ft_size_tab(t_params *param)
 
 void			define_pos(t_params *param, char dir, int x, int y)
 {
+	if (param->pos.x > 0 || param->pos.y > 0)
+	{
+		dprintf(1, "Error\nmultiple start position\n");
+		exit(0);
+	}
 	if (dir == 'N' || dir == 'S')
 	{
 		param->pos.x = y + 0.5;
@@ -82,7 +87,7 @@ static void		ft_first_last(int *map, int x_map)
 	}
 }
 
-void			ft_map_tab(t_params *param)
+void			ft_map_tab(t_params *param, char *cube)
 {
 	int		fd;
 	char	*buffer;
@@ -90,7 +95,7 @@ void			ft_map_tab(t_params *param)
 	int		**temp_map;
 
 	param->i = 0;
-	fd = open("map.cub", O_RDONLY);
+	fd = open(cube, O_RDONLY);
 	line = 1;
 	temp_map = (int **)malloc((param->y_map) * sizeof(int *));
 	temp_map[param->i] = (int *)malloc(param->x_map * sizeof(int));

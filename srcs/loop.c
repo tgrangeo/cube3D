@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   loop.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 13:56:54 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/10/01 15:53:05 by tgrangeo         ###   ########lyon.fr   */
+/*   Updated: 2020/11/23 12:57:01 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cube3d.h"
 
-static int		new_image(t_params *param)
+int		new_image(t_params *param)
 {
 	int		x;
 	int		wallheight;
@@ -50,6 +50,7 @@ int				ft_loop(t_params *param)
 {
 	t_vector_d	fpos;
 
+	//mlx_clear_window(param->mlx_ptr, param->win_ptr);
 	if (param->key.w == 1)
 		move_front(param, &fpos);
 	if (param->key.a == 1)

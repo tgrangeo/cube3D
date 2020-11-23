@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 11:40:57 by thomasgrang       #+#    #+#             */
-/*   Updated: 2020/10/01 16:01:07 by tgrangeo         ###   ########lyon.fr   */
+/*   Updated: 2020/11/02 11:49:43 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int			ft_check_map(t_params *param)
 			if (param->worldmap[y][x] == 0)
 				if (checker(param, x, y) == 0)
 				{
-					dprintf(1, " -----------\n| Map Error |\n -----------\n");
+					dprintf(1, "Error\nmap invalid\n");
 					exit(0);
 				}
 			x++;

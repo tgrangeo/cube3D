@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 14:17:31 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/10/01 16:10:58 by tgrangeo         ###   ########lyon.fr   */
+/*   Updated: 2020/11/23 12:44:45 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,37 @@ typedef struct	s_sprite
 	int			stripe;
 }				t_sprite;
 
+typedef struct	s_bitmap_file_header
+{
+	unsigned char	bitmap_type[2];
+	int				file_size;
+	short			reserved1;
+	short			reserved2;
+	unsigned int	offset_bits;
+}				t_bfh;
+
+typedef struct	s_bitmap_image_header
+{
+	unsigned int	size_header;
+	unsigned int	width;
+	unsigned int	height;
+	short int		planes;
+	short int		bit_count;
+	unsigned int	compression;
+	unsigned int	image_size;
+	unsigned int	ppm_x;
+	unsigned int	ppm_y;
+	unsigned int	clr_used;
+	unsigned int	clr_important;
+}				t_bih;
+
+typedef	struct	s_bmp
+{
+	t_bih	bih;
+	t_bfh	bfh;
+	int		fd;
+}				t_bmp;
+
 typedef struct	s_params
 {
 	t_img		img;
@@ -143,6 +174,8 @@ typedef struct	s_params
 	t_vector_i	c;
 	t_vector_i	v;
 	int			i;
+	char		*cube;
+	int			fd;
 }				t_params;
 
 #endif

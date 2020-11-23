@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_config.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 11:21:40 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/10/01 14:31:41 by tgrangeo         ###   ########lyon.fr   */
+/*   Updated: 2020/11/09 00:33:02 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,13 +90,13 @@ static int		ft_parse_2(t_params *param, char *str)
 	return (1);
 }
 
-void			ft_parse_config(t_params *param)
+void			ft_parse_config(t_params *param, char *cube)
 {
 	int		fd;
 	char	*buffer;
 
 	buffer = NULL;
-	fd = open("map.cub", O_RDONLY);
+	fd = open(cube, O_RDONLY);
 	while (get_next_line(fd, &buffer) > 0)
 	{
 		ft_parse_2(param, buffer);
@@ -105,7 +105,7 @@ void			ft_parse_config(t_params *param)
 	ft_parse_2(param, buffer);
 	free(buffer);
 	close(fd);
-	ft_size_tab(param);
-	ft_map_tab(param);
+	ft_size_tab(param, cube);
+	ft_map_tab(param, cube);
 	ft_check_map(param);
 }

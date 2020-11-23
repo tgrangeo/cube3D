@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 11:11:22 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/10/01 15:42:12 by tgrangeo         ###   ########lyon.fr   */
+/*   Updated: 2020/11/23 12:57:08 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 int			ft_close(t_params *param);
 int			ft_key_press(int key, t_params *param);
 int			ft_key_release(int key, t_params *param);
-void		ft_new_image(t_params *param);
+int			new_image(t_params *param);
 void		ft_vertical_line(int x, int heightwall, t_params *param);
-void		ft_parse_config(t_params *param);
+void		ft_parse_config(t_params *param, char *cube);
 t_params	ft_init_struct(void);
 double		ft_raycasting(int x, t_params *param);
 int			ft_idle(t_params *param);
@@ -35,8 +35,8 @@ void		move_back(t_params *param, t_vector_d *fpos);
 void		move_cam_left(t_params *param);
 void		move_cam_right(t_params *param);
 int			ft_loop(t_params *param);
-void		ft_size_tab(t_params *param);
-void		ft_map_tab(t_params *param);
+void		ft_size_tab(t_params *param, char *cube);
+void		ft_map_tab(t_params *param, char *cube);
 void		ft_init_map(t_params *param, int in_char);
 void		ft_init_map_two(t_params *param, int in_char);
 int			ft_check_map(t_params *param);
@@ -55,5 +55,8 @@ void		ft_map_tab2(t_params *param, char	*buffer, int **temp_map);
 void		ft_ligne(int *map, char *str, t_params *param, int line);
 void		ft_ligne2(int *map, char *str, t_params *param, int line);
 void		define_pos(t_params *param, char dir, int x, int y);
+void		free_tab_2D(int	**tab, int line);
+void		ft_bitmap_image(t_bmp *bmp, int fd, t_img img);
+int			ft_save_bitmap(const char *filename, t_params params);
 
 #endif

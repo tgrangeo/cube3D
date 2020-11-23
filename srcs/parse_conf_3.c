@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_conf_3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgrangeo <tgrangeo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: thomasgrangeon <thomasgrangeon@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 14:35:26 by tgrangeo          #+#    #+#             */
-/*   Updated: 2020/10/01 15:51:31 by tgrangeo         ###   ########lyon.fr   */
+/*   Updated: 2020/11/02 11:42:42 by thomasgrang      ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
